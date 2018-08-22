@@ -1,10 +1,20 @@
-import React from 'react'
+import React, { PureComponent } from 'react'
+import * as Blueprint from './Blueprint'
 
-const Index = () => {
-  return (
-    <div>Hello React!</div>
-  )
+class Main extends PureComponent {
+  render() {
+    const { children } = this.props
+    return (
+      <Blueprint.Grid>
+        <Blueprint.Header />
+        <Blueprint.Nav />
+        <Blueprint.Content>
+          <div>{children}</div>
+        </Blueprint.Content>
+      </Blueprint.Grid>
+    )
+  }
 }
 
-export default Index
+export default Main
 
